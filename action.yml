@@ -1,0 +1,32 @@
+name: 'Get Change'
+description: 'This is a Custom Action to Get the Change Request Number using the Change Details'
+inputs:
+  instance-url: 
+    description: 'ServiceNow Instance URL'
+    required: true
+  devops-integration-user-name:
+    description: 'Devops Integration User Name'
+    required: false
+  devops-integration-user-password:
+    description: 'Devops Integration User Password'
+    required: false
+  devops-integration-token:
+    description: 'Devops Integration Token'
+    required: false
+  tool-id:
+    description: 'Orchestration Tool Id'
+    required: true
+  context-github:
+    description: 'Github Context'
+    required: true
+  change-details:
+    description: 'The inputs to identify change at Servicenow and GET it.'
+    required: true        
+outputs:
+  change-request-number: 
+    description: 'Change Request Number found for the given change details'
+  status: 
+    description: 'To know the status of the Change Request GET call'    
+runs:
+  using: 'node16'
+  main: 'dist/index.js'
