@@ -56,7 +56,7 @@ const main = async () => {
             if (buildNumber == null || buildNumber == '')
                 buildNumber = `${githubContext.run_id}` + '/attempts/' + `${githubContext.run_attempt}`;
             else
-                buildNumber = buildNumber; /*+ '/attempts/' + `${githubContext.run_attempt}`*/
+                buildNumber = buildNumber+ '/attempts/' + `${githubContext.run_attempt}`;
 
             if (pipelineName == null || pipelineName == '')
                 pipelineName = `${githubContext.repository}` + '/' + `${githubContext.workflow}`;
